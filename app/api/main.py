@@ -23,3 +23,18 @@ def research(q: Query):
 
     return {"result": result["final"]} 
 
+
+
+from fastapi import FastAPI
+from pydantic import BaseModel
+from app.workflows.langgraph_workflow import run_langgraph
+
+app = FastAPI()
+
+class Query(BaseModel):
+    question: str
+
+@app.post("/research")
+def research(q: Query):
+    result = run_langgraph(q.question)
+    return {"result": result["final"]}
