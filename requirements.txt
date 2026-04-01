@@ -1,1 +1,15 @@
 
+crewai
+langgraph
+langchain
+langchain-openai
+openai
+fastapi
+uvicorn
+python-dotenv
+duckduckgo-search
+faiss-cpu
+chromadb
+tiktoken
+
+
